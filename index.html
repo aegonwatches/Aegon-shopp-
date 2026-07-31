@@ -80,7 +80,6 @@
   }
   .hero-cta a:hover{ letter-spacing:0.32em; background:#e0c07f; }
 
-  /* signature: minimal watch-hand mark, ticking */
   .mark{
     position:absolute; bottom:52px; left:50%; transform:translateX(-50%);
     width:34px; height:34px; opacity:0; animation:fadeUp 1s ease 1.2s forwards;
@@ -139,6 +138,7 @@
     display:inline-flex; align-items:center; gap:10px; text-decoration:none;
     font-size:12px; letter-spacing:0.2em; text-transform:uppercase; color:var(--bg);
     background:var(--gold); padding:16px 34px; transition:letter-spacing .35s ease, background .35s ease;
+    border:none; cursor:pointer; font-family:'Jost', sans-serif; font-weight:300;
   }
   .watch-info .dm-btn:hover{ letter-spacing:0.3em; background:#e0c07f; }
   .cta-group{ display:flex; gap:16px; flex-wrap:wrap; }
@@ -216,6 +216,36 @@
     .why-grid{ grid-template-columns:1fr; gap:40px; }
     .why, .faq{ padding:90px 6vw; }
   }
+
+  /* ---------- RESERVA MODAL ---------- */
+  #reservaOverlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:9999;
+    align-items:center; justify-content:center; padding:20px;
+  }
+  .reserva-box{
+    background:var(--panel); border:1px solid var(--gold-dim); border-radius:6px;
+    max-width:420px; width:100%; padding:36px 30px; position:relative;
+    font-family:'Jost', sans-serif; color:var(--ivory);
+  }
+  .reserva-close{
+    position:absolute; top:14px; right:18px; background:none; border:none;
+    color:var(--gold); font-size:24px; cursor:pointer; line-height:1;
+  }
+  .reserva-box h3{ font-size:26px; margin-bottom:6px; color:var(--gold); }
+  .reserva-sub{ font-size:13px; color:var(--dim); margin-bottom:22px; }
+  .reserva-box label{ display:block; font-size:12px; letter-spacing:0.05em; color:var(--dim); margin-bottom:5px; text-transform:uppercase; }
+  .reserva-box input, .reserva-box textarea{
+    width:100%; padding:11px; margin-bottom:15px; background:#1a1917; border:1px solid var(--line);
+    color:var(--ivory); border-radius:4px; font-family:'Jost', sans-serif; font-size:14px;
+  }
+  .reserva-box input:focus, .reserva-box textarea:focus{ outline:none; border-color:var(--gold-dim); }
+  .reserva-submit{
+    width:100%; padding:15px; background:var(--gold); border:none; color:var(--bg);
+    font-weight:500; border-radius:4px; cursor:pointer; font-size:12px; letter-spacing:0.18em;
+    text-transform:uppercase; transition:background .3s ease;
+  }
+  .reserva-submit:hover{ background:#e0c07f; }
+  .reserva-confirmacion{ display:none; text-align:center; margin-top:10px; color:var(--gold); font-size:14px; line-height:1.7; }
 </style>
 </head>
 <body>
@@ -276,13 +306,11 @@
       <div class="price-row"><span class="price">89 €</span><span class="price-was">109 €</span></div>
       <div class="shipping-note">Envío gratuito incluido</div>
       <div class="guarantee-line">Devolución 14 días · Garantía 12 meses</div>
-      <!-- Actualiza a mano tras cada venta real -->
       <div class="stock-line">7 / 10 disponibles a este precio
         <div class="stock-bar"><div class="stock-bar-fill" style="width:70%"></div></div>
       </div>
       <div class="cta-group">
-        <a class="dm-btn" href="https://www.tiktok.com/@aegon783" target="_blank" rel="noopener">DM "SKELETON" en TikTok →</a>
-        <a class="dm-btn secondary" href="https://www.facebook.com/share/1JPLKX9VHU/" target="_blank" rel="noopener">DM en Facebook →</a>
+        <button class="dm-btn" onclick="abrirReserva('Skeleton')">Reservar mi pieza →</button>
       </div>
     </div>
   </article>
@@ -313,8 +341,7 @@
         <div class="stock-bar"><div class="stock-bar-fill" style="width:90%"></div></div>
       </div>
       <div class="cta-group">
-        <a class="dm-btn" href="https://www.facebook.com/share/1JPLKX9VHU/" target="_blank" rel="noopener">DM "MESH" en Facebook →</a>
-        <a class="dm-btn secondary" href="https://www.tiktok.com/@aegon783" target="_blank" rel="noopener">DM en TikTok →</a>
+        <button class="dm-btn" onclick="abrirReserva('Mesh')">Reservar mi pieza →</button>
       </div>
     </div>
   </article>
@@ -340,8 +367,7 @@
         <div class="stock-bar"><div class="stock-bar-fill" style="width:50%"></div></div>
       </div>
       <div class="cta-group">
-        <a class="dm-btn" href="https://www.tiktok.com/@aegon783" target="_blank" rel="noopener">DM "WOOD" en TikTok →</a>
-        <a class="dm-btn secondary" href="https://www.facebook.com/share/1JPLKX9VHU/" target="_blank" rel="noopener">DM en Facebook →</a>
+        <button class="dm-btn" onclick="abrirReserva('Wood')">Reservar mi pieza →</button>
       </div>
     </div>
   </article>
@@ -376,7 +402,7 @@
     </div>
     <div class="faq-item">
       <button class="faq-q">¿Puedo devolverlo si no me convence?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Sí, tienes 14 días desde la recepción para devolverlo sin preguntas. Te confirmamos el proceso por DM.</p></div>
+      <div class="faq-a"><p>Sí, tienes 14 días desde la recepción para devolverlo sin preguntas. Te confirmamos el proceso al reservar.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">¿Qué garantía tiene el reloj?<span class="faq-icon">+</span></button>
@@ -384,8 +410,118 @@
     </div>
     <div class="faq-item">
       <button class="faq-q">¿Cómo reservo mi pieza?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Escríbenos por DM en TikTok o Facebook indicando el modelo. Confirmamos disponibilidad, tramo de precio y coordinamos el envío directamente contigo.</p></div>
+      <div class="faq-a"><p>Pulsa "Reservar mi pieza" en el modelo que quieras, rellena tus datos y te contactamos en menos de 24h para confirmar disponibilidad, tramo de precio y envío.</p></div>
     </div>
     <div class="faq-item">
       <button class="faq-q">¿Por qué el precio sube con el tiempo?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Cada modelo se vende en tramos de 10 unidades. Cuando se agota un tramo, 
+      <div class="faq-a"><p>Cada modelo se lanza con tiradas limitadas de 10 unidades por tramo. Cuando un tramo se agota, el precio sube al siguiente — no hay rebajas artificiales ni descuentos de última hora. El precio de hoy es el más bajo que ese modelo tendrá.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h2>¿Lista tu decisión?</h2>
+  <p>Reserva tu pieza directamente desde la colección. Tiradas limitadas, numeradas, sin intermediarios.</p>
+  <div class="foot-links">
+    <a href="https://www.tiktok.com/@aegon783" target="_blank" rel="noopener">TikTok</a>
+    <a href="https://www.facebook.com/share/1JPLKX9VHU/" target="_blank" rel="noopener">Facebook</a>
+  </div>
+  <p class="fine">© 2026 <span>AEGON</span>. Todos los derechos reservados. Piezas numeradas de edición limitada.</p>
+</footer>
+
+<!-- ============================================ -->
+<!-- MODAL DE RESERVA -->
+<!-- ============================================ -->
+<div id="reservaOverlay">
+  <div class="reserva-box">
+    <button class="reserva-close" onclick="cerrarReserva()">×</button>
+    <h3>Reservar mi pieza</h3>
+    <p class="reserva-sub" id="reservaModeloTexto"></p>
+
+    <form id="formReserva">
+      <input type="hidden" id="reservaModelo" name="modelo" />
+
+      <label>Nombre completo</label>
+      <input required type="text" id="reservaNombre" />
+
+      <label>Email</label>
+      <input required type="email" id="reservaEmail" />
+
+      <label>Teléfono</label>
+      <input required type="tel" id="reservaTelefono" />
+
+      <label>Dirección de envío</label>
+      <input required type="text" id="reservaDireccion" />
+
+      <label>Nota (opcional)</label>
+      <textarea id="reservaNota" rows="2"></textarea>
+
+      <button type="submit" class="reserva-submit">Reservar mi pieza →</button>
+    </form>
+
+    <p class="reserva-confirmacion" id="reservaConfirmacion">
+      Reserva recibida — te contactamos en menos de 24h. Se ha abierto tu cliente de correo, solo confirma el envío.
+    </p>
+  </div>
+</div>
+
+<script>
+  // ---------- FAQ ACCORDION ----------
+  document.querySelectorAll('.faq-item').forEach(function(item){
+    item.querySelector('.faq-q').addEventListener('click', function(){
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
+      if(!isOpen){ item.classList.add('open'); }
+    });
+  });
+
+  // ---------- RESERVA MODAL ----------
+  // Cambia esto por tu email real donde quieres recibir las reservas
+  const AEGON_EMAIL_DESTINO = andergkbzudo@gmail.com;
+
+  function abrirReserva(modelo){
+    document.getElementById('reservaModelo').value = modelo;
+    document.getElementById('reservaModeloTexto').textContent = "Modelo seleccionado: " + modelo;
+    document.getElementById('reservaOverlay').style.display = 'flex';
+    document.getElementById('formReserva').style.display = 'block';
+    document.getElementById('reservaConfirmacion').style.display = 'none';
+  }
+
+  function cerrarReserva(){
+    document.getElementById('reservaOverlay').style.display = 'none';
+  }
+
+  document.getElementById('reservaOverlay').addEventListener('click', function(e){
+    if(e.target === this){ cerrarReserva(); }
+  });
+
+  document.getElementById('formReserva').addEventListener('submit', function(e){
+    e.preventDefault();
+
+    const modelo = document.getElementById('reservaModelo').value;
+    const nombre = document.getElementById('reservaNombre').value;
+    const email = document.getElementById('reservaEmail').value;
+    const telefono = document.getElementById('reservaTelefono').value;
+    const direccion = document.getElementById('reservaDireccion').value;
+    const nota = document.getElementById('reservaNota').value;
+
+    const asunto = encodeURIComponent("Nueva reserva AEGON — " + modelo);
+    const cuerpo = encodeURIComponent(
+      "Nueva reserva:\n\n" +
+      "Modelo: " + modelo + "\n" +
+      "Nombre: " + nombre + "\n" +
+      "Email: " + email + "\n" +
+      "Teléfono: " + telefono + "\n" +
+      "Dirección: " + direccion + "\n" +
+      "Nota: " + (nota || "—")
+    );
+
+    window.location.href = "mailto:" + AEGON_EMAIL_DESTINO + "?subject=" + asunto + "&body=" + cuerpo;
+
+    document.getElementById('formReserva').style.display = 'none';
+    document.getElementById('reservaConfirmacion').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
