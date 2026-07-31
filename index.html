@@ -107,10 +107,8 @@
 
   .watch{
     display:grid; grid-template-columns:1fr 1fr; gap:80px; align-items:center;
-    max-width:1180px; margin:0 auto 180px; opacity:0; transform:translateY(30px);
-    transition:opacity .9s ease, transform .9s ease;
+    max-width:1180px; margin:0 auto 180px; opacity:1;
   }
-  .watch.visible{ opacity:1; transform:translateY(0); }
   .watch:nth-child(even){ direction:rtl; }
   .watch:nth-child(even) > *{ direction:ltr; }
 
@@ -389,4 +387,5 @@
       <div class="faq-a"><p>Escríbenos por DM en TikTok o Facebook indicando el modelo. Confirmamos disponibilidad, tramo de precio y coordinamos el envío directamente contigo.</p></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q">¿Por qué el precio sube con el tiempo?<span
+      <button class="faq-q">¿Por qué el precio sube con el tiempo?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Cada modelo se vende en tramos de 10 unidades. Cuando se agota un tramo, 
