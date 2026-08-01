@@ -136,16 +136,6 @@
   .watch-frame img.loaded{ display:block; }
   .placeholder-icon{ width:38%; opacity:0.35; }
 
-  .watch-gallery{ min-width:0; max-width:100%; }
-  .gallery-thumbs{ display:flex; gap:8px; margin-top:10px; }
-  .gallery-thumbs img{
-    flex:1; min-width:0; aspect-ratio:1/1; object-fit:cover; object-position:center;
-    border:1px solid var(--line); cursor:pointer; opacity:0.55;
-    transition:opacity .25s ease, border-color .25s ease;
-  }
-  .gallery-thumbs img:hover{ opacity:0.85; }
-  .gallery-thumbs img.active{ opacity:1; border-color:var(--gold); }
-
   .watch-info .index{ font-size:12px; letter-spacing:0.3em; color:var(--gold-dim); margin-bottom:18px; display:block; }
   .watch-info h3{ font-size:clamp(32px,4vw,46px); margin-bottom:16px; }
   .watch-info .desc{ color:var(--dim); font-size:15px; line-height:1.85; max-width:400px; margin-bottom:26px; }
@@ -324,17 +314,8 @@
   <!-- SKELETON -->
   <article class="watch">
   <article class="watch">
-    <div class="watch-gallery">
-      <div class="watch-frame" data-label="Ref. 01 — Skeleton">
-       <img src="skeleton-main.jpg" class="loaded" id="skeletonMain" alt="Aegon Skeleton">
-      </div>
-      <div class="gallery-thumbs">
-        <img src="skeleton-main.jpg" class="active" onclick="cambiarFoto('skeletonMain', 'skeleton-main.jpg', this)" alt="Vista general">
-        <img src="skeleton-1.jpg" onclick="cambiarFoto('skeletonMain', 'skeleton-1.jpg', this)" alt="Vista frontal">
-        <img src="skeleton-2.jpg" onclick="cambiarFoto('skeletonMain', 'skeleton-2.jpg', this)" alt="Detalle esfera">
-        <img src="skeleton-3.jpg" onclick="cambiarFoto('skeletonMain', 'skeleton-3.jpg', this)" alt="Detalle brazalete">
-        <img src="skeleton-4.jpg" onclick="cambiarFoto('skeletonMain', 'skeleton-4.jpg', this)" alt="Detalle mecanismo">
-      </div>
+    <div class="watch-frame" data-label="Ref. 01 — Skeleton">
+     <img src="skeleton.jpg" class="loaded" alt="Aegon Skeleton">
     </div>
     <div class="watch-info">
       <span class="index">Ref. 01</span>
@@ -360,17 +341,8 @@
   <!-- MESH -->
   <article class="watch">
   <article class="watch">
-    <div class="watch-gallery">
-      <div class="watch-frame" data-label="Ref. 02 — Mesh">
-         <img src="mesh-main.jpg" class="loaded" id="meshMain" alt="Aegon Mesh">
-      </div>
-      <div class="gallery-thumbs">
-        <img src="mesh-main.jpg" class="active" onclick="cambiarFoto('meshMain', 'mesh-main.jpg', this)" alt="Vista general">
-        <img src="mesh-1.jpg" onclick="cambiarFoto('meshMain', 'mesh-1.jpg', this)" alt="Vista frontal">
-        <img src="mesh-2.jpg" onclick="cambiarFoto('meshMain', 'mesh-2.jpg', this)" alt="Detalle esfera">
-        <img src="mesh-3.jpg" onclick="cambiarFoto('meshMain', 'mesh-3.jpg', this)" alt="Detalle brazalete">
-        <img src="mesh-4.jpg" onclick="cambiarFoto('meshMain', 'mesh-4.jpg', this)" alt="Detalle mecanismo">
-      </div>
+    <div class="watch-frame" data-label="Ref. 02 — Mesh">
+       <img src="mesh.jpg" class="loaded" alt="Aegon Mesh">
     </div>
     <div class="watch-info">
       <span class="index">Ref. 02</span>
@@ -396,17 +368,8 @@
   <!-- WOOD -->
   <article class="watch">
   <article class="watch">
-    <div class="watch-gallery">
-      <div class="watch-frame" data-label="Ref. 03 — Wood">
-        <img src="wood-main.jpg" class="loaded" id="woodMain" alt="Aegon Wood">
-      </div>
-      <div class="gallery-thumbs">
-        <img src="wood-main.jpg" class="active" onclick="cambiarFoto('woodMain', 'wood-main.jpg', this)" alt="Vista general">
-        <img src="wood-1.jpg" onclick="cambiarFoto('woodMain', 'wood-1.jpg', this)" alt="Vista frontal">
-        <img src="wood-2.jpg" onclick="cambiarFoto('woodMain', 'wood-2.jpg', this)" alt="Detalle esfera">
-        <img src="wood-3.jpg" onclick="cambiarFoto('woodMain', 'wood-3.jpg', this)" alt="Detalle correa">
-        <img src="wood-4.jpg" onclick="cambiarFoto('woodMain', 'wood-4.jpg', this)" alt="Detalle mecanismo">
-      </div>
+    <div class="watch-frame" data-label="Ref. 03 — Wood">
+      <img src="wood.jpg" class="loaded" alt="Aegon Wood">
     </div>
     <div class="watch-info">
       <span class="index">Ref. 03</span>
@@ -547,13 +510,6 @@
 </div>
 
 <script>
-  // ---------- GALERÍA DE FOTOS (clic en miniatura) ----------
-  function cambiarFoto(mainImgId, nuevaSrc, thumbEl){
-    document.getElementById(mainImgId).src = nuevaSrc;
-    thumbEl.parentElement.querySelectorAll('img').forEach(function(t){ t.classList.remove('active'); });
-    thumbEl.classList.add('active');
-  }
-
   // ---------- FAQ ACCORDION ----------
   document.querySelectorAll('.faq-item').forEach(function(item){
     item.querySelector('.faq-q').addEventListener('click', function(){
