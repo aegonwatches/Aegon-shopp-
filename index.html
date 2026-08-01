@@ -136,9 +136,10 @@
   .watch-frame img.loaded{ display:block; }
   .placeholder-icon{ width:38%; opacity:0.35; }
 
+  .watch-gallery{ min-width:0; max-width:100%; }
   .gallery-thumbs{ display:flex; gap:8px; margin-top:10px; }
   .gallery-thumbs img{
-    flex:1; aspect-ratio:1/1; object-fit:cover; object-position:center;
+    flex:1; min-width:0; aspect-ratio:1/1; object-fit:cover; object-position:center;
     border:1px solid var(--line); cursor:pointer; opacity:0.55;
     transition:opacity .25s ease, border-color .25s ease;
   }
