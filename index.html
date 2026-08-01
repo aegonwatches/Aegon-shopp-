@@ -3,7 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AEGON — Fine Timepieces</title>
+<title>AEGON — Relojes minimalistas de edición limitada</title>
+<meta name="description" content="Relojería de diseño minimalista sin logos visibles. Tres piezas en tirada limitada y numerada: Skeleton, Mesh y Wood. Envío gratuito, garantía 12 meses, devolución 14 días.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AEGON — Relojes minimalistas de edición limitada">
+<meta property="og:description" content="Tiempo, en silencio. Tres piezas en tirada limitada y numerada. Sin logos, sin intermediarios.">
+<meta property="og:image" content="https://aegonwatches.github.io/Aegon-shopp-/skeleton.jpg">
+<meta property="og:url" content="https://aegonwatches.github.io/Aegon-shopp-/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AEGON — Relojes minimalistas de edición limitada">
+<meta name="twitter:description" content="Tiempo, en silencio. Tres piezas en tirada limitada y numerada.">
+<meta name="twitter:image" content="https://aegonwatches.github.io/Aegon-shopp-/skeleton.jpg">
+<meta name="theme-color" content="#0b0b0c">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -194,6 +205,17 @@
   .why-mark .num{ font-family:'Cormorant Garamond', serif; color:var(--gold); font-size:30px; display:block; margin-bottom:8px; }
   .why-mark p{ font-size:12px; color:var(--dim); line-height:1.6; }
 
+  /* ---------- TESTIMONIALS ---------- */
+  .testimonials{ border-top:1px solid var(--line); padding:140px 6vw; }
+  .testimonials-head{ text-align:center; margin-bottom:70px; }
+  .testimonials-head h2{ font-size:clamp(30px,4vw,44px); margin-top:14px; }
+  .t-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line); max-width:1180px; margin:0 auto; }
+  .t-card{ background:var(--panel); padding:34px 30px; }
+  .t-stars{ color:var(--gold); font-size:13px; letter-spacing:0.15em; margin-bottom:18px; }
+  .t-card p{ color:var(--ivory); font-size:14px; line-height:1.8; margin-bottom:22px; font-family:'Cormorant Garamond', serif; font-size:17px; }
+  .t-author{ font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--dim); }
+  @media (max-width:840px){ .t-grid{ grid-template-columns:1fr; } .testimonials{ padding:90px 6vw; } }
+
   /* ---------- FAQ ---------- */
   .faq{ border-top:1px solid var(--line); padding:140px 6vw; }
   .faq-head{ text-align:center; margin-bottom:70px; }
@@ -362,166 +384,4 @@
       </ul>
       <div class="price-row"><span class="price">119 €</span><span class="price-was">139 €</span></div>
       <div class="shipping-note">Envío gratuito incluido</div>
-      <div class="guarantee-line">Devolución 14 días · Garantía 12 meses</div>
-      <div class="stock-line">5 / 10 disponibles a este precio
-        <div class="stock-bar"><div class="stock-bar-fill" style="width:50%"></div></div>
-      </div>
-      <div class="cta-group">
-        <button class="dm-btn" onclick="abrirReserva('Wood')">Reservar mi pieza →</button>
-      </div>
-    </div>
-  </article>
-</section>
-
-<section class="why">
-  <div class="why-grid">
-    <div class="why-copy">
-      <div class="eyebrow" style="margin-bottom:20px;">Por qué Aegon</div>
-      <p>No hacemos relojes para que se note la marca. Los hacemos para quien ya no necesita demostrar nada.</p>
-      <p>Aegon nace de una idea simple: la relojería de diseño se ha llenado de logos gritando en la esfera. Nosotros quitamos el ruido y dejamos el mecanismo, el acabado y el silencio de una pieza bien hecha.</p>
-      <p>Cada modelo se lanza en tirada limitada y numerada. Cuando se agota un tramo de precio, sube al siguiente — así ha funcionado siempre la relojería que no necesita rebajas para venderse.</p>
-    </div>
-    <div class="why-marks">
-      <div class="why-mark"><span class="num">10</span><p>unidades por tramo de precio, en cada modelo</p></div>
-      <div class="why-mark"><span class="num">3</span><p>piezas en la colección de lanzamiento</p></div>
-      <div class="why-mark"><span class="num">14d</span><p>de devolución sin preguntas</p></div>
-      <div class="why-mark"><span class="num">12m</span><p>de garantía en cada reloj</p></div>
-    </div>
-  </div>
-</section>
-
-<section class="faq">
-  <div class="faq-head">
-    <div class="eyebrow" style="animation:none; opacity:1;">Preguntas frecuentes</div>
-    <h2>¿Dudas antes de decidir?</h2>
-  </div>
-  <div class="faq-list">
-    <div class="faq-item">
-      <button class="faq-q">¿Cuánto tarda el envío?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Entre 3 y 7 días laborables dentro de España, con envío gratuito y discreto en cada pedido.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Puedo devolverlo si no me convence?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Sí, tienes 14 días desde la recepción para devolverlo sin preguntas. Te confirmamos el proceso al reservar.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Qué garantía tiene el reloj?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>12 meses de garantía sobre el movimiento y los acabados desde la fecha de compra.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Cómo reservo mi pieza?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Pulsa "Reservar mi pieza" en el modelo que quieras, rellena tus datos y te contactamos en menos de 24h para confirmar disponibilidad, tramo de precio y envío.</p></div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-q">¿Por qué el precio sube con el tiempo?<span class="faq-icon">+</span></button>
-      <div class="faq-a"><p>Cada modelo se lanza con tiradas limitadas de 10 unidades por tramo. Cuando un tramo se agota, el precio sube al siguiente — no hay rebajas artificiales ni descuentos de última hora. El precio de hoy es el más bajo que ese modelo tendrá.</p></div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <h2>¿Lista tu decisión?</h2>
-  <p>Reserva tu pieza directamente desde la colección. Tiradas limitadas, numeradas, sin intermediarios.</p>
-  <div class="foot-links">
-    <a href="https://www.tiktok.com/@aegon783" target="_blank" rel="noopener">TikTok</a>
-    <a href="https://www.facebook.com/share/1JPLKX9VHU/" target="_blank" rel="noopener">Facebook</a>
-  </div>
-  <p class="fine">© 2026 <span>AEGON</span>. Todos los derechos reservados. Piezas numeradas de edición limitada.</p>
-</footer>
-
-<!-- ============================================ -->
-<!-- MODAL DE RESERVA -->
-<!-- ============================================ -->
-<div id="reservaOverlay">
-  <div class="reserva-box">
-    <button class="reserva-close" onclick="cerrarReserva()">×</button>
-    <h3>Reservar mi pieza</h3>
-    <p class="reserva-sub" id="reservaModeloTexto"></p>
-
-    <form id="formReserva">
-      <input type="hidden" id="reservaModelo" name="modelo" />
-
-      <label>Nombre completo</label>
-      <input required type="text" id="reservaNombre" />
-
-      <label>Email</label>
-      <input required type="email" id="reservaEmail" />
-
-      <label>Teléfono</label>
-      <input required type="tel" id="reservaTelefono" />
-
-      <label>Dirección de envío</label>
-      <input required type="text" id="reservaDireccion" />
-
-      <label>Nota (opcional)</label>
-      <textarea id="reservaNota" rows="2"></textarea>
-
-      <button type="submit" class="reserva-submit">Reservar mi pieza →</button>
-    </form>
-
-    <p class="reserva-confirmacion" id="reservaConfirmacion">
-      Reserva recibida — te contactamos en menos de 24h. Se ha abierto tu cliente de correo, solo confirma el envío.
-    </p>
-  </div>
-</div>
-
-<script>
-  // ---------- FAQ ACCORDION ----------
-  document.querySelectorAll('.faq-item').forEach(function(item){
-    item.querySelector('.faq-q').addEventListener('click', function(){
-      var isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(function(i){ i.classList.remove('open'); });
-      if(!isOpen){ item.classList.add('open'); }
-    });
-  });
-
-  // ---------- RESERVA MODAL ----------
-  // Cambia esto por tu email real donde quieres recibir las reservas
-  const AEGON_EMAIL_DESTINO = "andergkbzudo@gmail.com";
-
-  function abrirReserva(modelo){
-    document.getElementById('reservaModelo').value = modelo;
-    document.getElementById('reservaModeloTexto').textContent = "Modelo seleccionado: " + modelo;
-    document.getElementById('reservaOverlay').style.display = 'flex';
-    document.getElementById('formReserva').style.display = 'block';
-    document.getElementById('reservaConfirmacion').style.display = 'none';
-  }
-
-  function cerrarReserva(){
-    document.getElementById('reservaOverlay').style.display = 'none';
-  }
-
-  document.getElementById('reservaOverlay').addEventListener('click', function(e){
-    if(e.target === this){ cerrarReserva(); }
-  });
-
-  document.getElementById('formReserva').addEventListener('submit', function(e){
-    e.preventDefault();
-
-    const modelo = document.getElementById('reservaModelo').value;
-    const nombre = document.getElementById('reservaNombre').value;
-    const email = document.getElementById('reservaEmail').value;
-    const telefono = document.getElementById('reservaTelefono').value;
-    const direccion = document.getElementById('reservaDireccion').value;
-    const nota = document.getElementById('reservaNota').value;
-
-    const asunto = encodeURIComponent("Nueva reserva AEGON — " + modelo);
-    const cuerpo = encodeURIComponent(
-      "Nueva reserva:\n\n" +
-      "Modelo: " + modelo + "\n" +
-      "Nombre: " + nombre + "\n" +
-      "Email: " + email + "\n" +
-      "Teléfono: " + telefono + "\n" +
-      "Dirección: " + direccion + "\n" +
-      "Nota: " + (nota || "—")
-    );
-
-    window.location.href = "mailto:" + AEGON_EMAIL_DESTINO + "?subject=" + asunto + "&body=" + cuerpo;
-
-    document.getElementById('formReserva').style.display = 'none';
-    document.getElementById('reservaConfirmacion').style.display = 'block';
-  });
-</script>
-
-</body>
-</html>
+      <div class="guarantee-line">Devolución 14 días 
